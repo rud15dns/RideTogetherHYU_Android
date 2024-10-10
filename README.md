@@ -1,1 +1,0 @@
-# RideTogetherHYU_Android
