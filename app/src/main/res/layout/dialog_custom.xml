@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="0dp">
+<!--    패딩 때문에 테두리가 끝까지 못이어지는 현상-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="매칭을 진행하시겠습니까?"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <!-- 제목 아래 가로 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+
+        android:background="#F5F6F9" /> <!-- 연한 회색 구분선 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <!-- 구분선 추가 -->
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="아니오"
+            android:textColor="#9E9E9E"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="#F5F6F9" /> <!-- 약간의 투명도 -->
+
+        <Button
+            android:id="@+id/okButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="예"
+            android:textColor="#007BFF"
+            android:textSize="16sp" />
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
