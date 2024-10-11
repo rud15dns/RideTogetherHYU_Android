@@ -3,7 +3,21 @@
     <style name="Base.Theme.HYU_Main" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="floatingActionButtonStyle">@style/Widget.MaterialComponents.FloatingActionButton</item>
+
+
     </style>
 
     <style name="Theme.HYU_Main" parent="Base.Theme.HYU_Main" />
+
+    <style name="ShapeAppearance.TabLayout.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item> <!-- 모서리 둥근 정도 -->
+    </style>
+
+    <!-- TabLayout 스타일 정의 -->
+    <style name="Widget.TabLayout.Rounded" parent="Widget.MaterialComponents.TabLayout">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.TabLayout.Rounded</item>
+    </style>
+
 </resources>

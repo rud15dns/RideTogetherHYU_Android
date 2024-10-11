@@ -3,17 +3,17 @@
     <item
         android:id="@+id/fragment_home"
         android:title="홈"
-        android:icon="@drawable/ic_home" />
+        android:icon="@drawable/selector_home_icon" />
 
     <item
         android:id="@+id/fragment_add"
         android:title="매칭추가"
-        android:icon="@drawable/ic_add" />
+        android:icon="@drawable/selector_add_icon" />
 
     <item
         android:id="@+id/fragment_mypage"
         android:title="마이페이지"
-        android:icon="@drawable/ic_mypage" />
+        android:icon="@drawable/selector_mypage_icon" />
 
 
 </menu>

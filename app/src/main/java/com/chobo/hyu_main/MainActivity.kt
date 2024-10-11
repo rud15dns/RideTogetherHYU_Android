@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
         setBottomNavigationView()
 
         // 앱 초기 실행 시 홈화면으로 설정

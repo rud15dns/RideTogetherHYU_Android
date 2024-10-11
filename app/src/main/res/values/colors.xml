@@ -4,4 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color> <!-- 회색 코드 (수정 가능) -->
     <color name="blue">#2196F3</color> <!-- 파란색 코드 (수정 가능) -->
+    <color name="red">#FF6666</color>
+    <color name="nav_icon_color">#4E6BF5</color>
+    <color name="nav_background_color">#FFFFFF</color>
+    <color name="scrollview">#F5F6F9</color>
+    <color name="progress_color">#4E6BF5</color>
+    <color name="progress_background_color">#FFFFFF</color>
+    <color name="description_button">#80FFFFFF</color>
+
+
 </resources>

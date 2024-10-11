@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HomeFragment">
 
     <!-- 상단 인사말과 사용자 이름 -->
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:text="안녕하세요,"
             android:textSize="18sp"
+            android:paddingTop="16dp"
             android:textColor="@color/black"/>
 
         <TextView
@@ -41,25 +43,25 @@
         android:id="@+id/guide_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         app:cardCornerRadius="12dp"
-        app:cardElevation="8dp"
+        app:cardElevation="4dp"
+        android:layout_margin="16dp"
+        android:background="@color/scrollview"
         app:layout_constraintTop_toBottomOf="@id/greeting_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="@drawable/gradient">
 
             <!-- 이미지 (학생 캐릭터) -->
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_student_image"
-                android:contentDescription="학생 캐릭터" />
 
-            <!-- 텍스트 영역 -->
+            <!-- 오른쪽 텍스트 -->
+
+
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -68,44 +70,68 @@
                 android:paddingStart="16dp">
 
                 <TextView
-                    android:id="@+id/card_title"
+                    android:paddingTop="10dp"
+                    android:id="@+id/app_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="갓생러들을 위한 택시 공유앱"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/app_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="같이타HYU"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/white"
+                    android:paddingBottom="30dp" />
 
-                <TextView
-                    android:id="@+id/card_description"
+
+
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="갓생러들을 위한 택시 공유앱"
-                    android:textSize="14sp"
-                    android:textColor="@color/gray"/>
+                    android:text="이용방법 보러가기"
+                    android:backgroundTint="@color/description_button"
+                    android:textColor="@color/white"/>
 
             </LinearLayout>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="학생 캐릭터"
+                android:src="@drawable/ic_student_image" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="23dp"
+        android:src="@drawable/ic_plus"
         android:contentDescription="플러스 버튼"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:fabCustomSize="70dp"
+        android:scaleType="center"
+        app:maxImageSize="33dp"
+        app:backgroundTint="@color/nav_icon_color"
+        />
 
     <!-- 탭 버튼 (학교에서 역까지 / 역에서 학교까지) -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/guide_card"
         app:tabIndicatorColor="@color/blue"
-        app:tabSelectedTextColor="@color/blue"
+        app:tabSelectedTextColor="@color/black"
         app:tabTextColor="@color/black">
 
         <com.google.android.material.tabs.TabItem
@@ -119,6 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="역에서 학교까지"/>
+
     </com.google.android.material.tabs.TabLayout>
 
     <!-- 리스트 아이템들 (ScrollView로 구현) -->
@@ -126,6 +153,7 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/scrollview"
         app:layout_constraintTop_toBottomOf="@id/tab_layout"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -139,34 +167,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/scrollview">
 
                 <LinearLayout
+                    android:id="@+id/card_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="정문 출발"
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="제기동 방면 32번 버스"/>
-
-                    <ProgressBar
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:progress="75"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
-
-                </LinearLayout>
+                    android:padding="16dp" />
             </androidx.cardview.widget.CardView>
 
             <!-- 추가 카드뷰 아이템들... -->
