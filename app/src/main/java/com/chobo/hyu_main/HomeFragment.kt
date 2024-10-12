@@ -16,6 +16,9 @@ import androidx.core.content.ContextCompat
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import android.widget.Button
+import android.content.Intent
+import androidx.navigation.fragment.findNavController // Navigation Controller import 추가
 
 class HomeFragment : Fragment() {
     private lateinit var containerLayout: ViewGroup
@@ -47,6 +50,13 @@ class HomeFragment : Fragment() {
             }
 
             showMatchingDialog(plusButton) // plusButton을 전달하여 클릭 상태를 유지
+        }
+
+        val buttonGuide: Button = view.findViewById(R.id.button_guide)
+        buttonGuide.setOnClickListener {
+            // GuideActivity로 전환
+            val intent = Intent(requireContext(), GuideActivity::class.java)
+            startActivity(intent) // 새 Activity 시작
         }
 
         // TabLayout을 참조합니다.
@@ -164,6 +174,7 @@ class HomeFragment : Fragment() {
         val descriptionTextView = cardView.findViewById<TextView>(R.id.card_description)
         val seatInfoTextView = cardView.findViewById<TextView>(R.id.card_seat_info)
         val progressBar = cardView.findViewById<ProgressBar>(R.id.card_progress)
+
 
         // 설정
         statusTextView.text = statusLabel
